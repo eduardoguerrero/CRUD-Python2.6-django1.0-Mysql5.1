@@ -1,0 +1,28 @@
+{% extends "base.html" %}
+{% block title %}Django[Python]{% endblock %}
+{% block contenido %}
+<div id="resultado" >
+<a href='/logout'>Logout</a>
+{% block encabezado %}<h1>Agregar un registro</h1>{% endblock%}
+
+<form  class='estiloform' name='formulario'  action=""  onsubmit="insertar('http://localhost:8000/agregar/','resultado','Vacios'); return false">
+<table >
+	<tr><td><div>Nombre:</td><td><input type="text" name="nom" value="{{ query|escape }}" onkeypress='return sololetra(event)'></div></td></tr>		
+	<tr><td><div>Apellido:</td><td><input type="text" name="ape" value="{{ query|escape }}"  onkeypress='return sololetra(event)'></div></td></tr>
+	<tr><td><div>Pais:</td><td><input type="text" name="pais" value="{{ query|escape }}"  onkeypress='return sololetra(event)'><div></td></tr>
+	<tr><td><div>Correo:</td>
+	<td><input type="text" name="correo" value="{{ query|escape }}"><div></td></tr>
+	<tr><td><div><input type="submit" value="Aceptar"></td><td></div>
+	<div><input type="reset" value="Limpiar"></div></td></tr></tr><tr>	
+</table>
+</form>
+{% if exito %}
+		<div class="mensaje" align="justify">Registro agregado</div>
+{% endif %}
+<div id=Vacios align="center" ></div>
+{% endblock %}
+
+</div>
+
+
+

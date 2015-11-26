@@ -1,0 +1,24 @@
+{% extends "base.html" %}
+{% block title %}Django[Python]{% endblock %}
+{% block contenido %}
+{% block encabezado %}<h1>Login</h1>{% endblock %}
+{% if login %}
+		<div class="mensaje" align="justify">Ingrese su usuario y password</div>
+{% endif %}
+<form action='.' method='post'>
+	<table>
+		<tr>
+			<td><label for="username">User name:</label></td><td>	<input type="text" name="username" value="" id="username"></td>
+		</tr>
+		<tr>
+			<td><label for="password">Password:</label></td><td><input type="password" name="password" value="" id="password"></td>
+		</tr>
+		<tr>
+			<td colspan=2><input type="submit" value="login" /></td>
+		</tr>
+		<tr>
+			<td colspan=2><input type="hidden" name="next" value="{{ next|escape }}" /></td>
+		</tr>
+	</table>
+	<form action='.' method='post'>
+{% endblock %}

@@ -1,0 +1,26 @@
+{% extends "base.html" %}
+{% block title %}Django[Python]{% endblock %}
+{% block contenido %}
+<div id="resultado" >
+{% block encabezado %}<h1>Actualizar un registro</h1>{% endblock%}
+<form  class='estiloform' name='formulario'  action=""  onsubmit="actualizar('http://localhost:8000/actualizar/','resultado','Vacios'); return false">
+{% if results %}
+	<table id="tabla_" >
+	{% for agenda in results %}	
+	<tr>
+		<tr><td><label for="q">Codigo:</label></td><td><input type="text" name="id" value="{{agenda.id}}" readonly></td></tr>	
+		<tr><td><label for="q">Nombre:</label></td><td><input type="text" name="nom" value="{{agenda.nombre}}" onkeypress='return sololetra(event)'></td></tr>		
+		<tr><td><label for="q">Apellido:</label></td><td><input type="text" name="ape" value="{{agenda.apellido}}" onkeypress='return sololetra(event)'></td></tr>
+		<tr><td><label for="q">Pais: </label></td><td><input type="text" name="pais" value="{{agenda.pais}}"  onkeypress='return sololetra(event)'></td></tr>
+		<tr><td><label for="q">Correo: </label></td><td><input type="text" name="correo" value="{{agenda.correo}}"</td></tr>
+		<tr><td colspan=2><input type="submit" value="Actualizar"></td></tr></tr><tr>		
+	</tr>
+	</table>	
+	{% endfor %}
+{% else %}
+	<p>Datos no encontrados</p>
+{% endif %}
+</form>
+<div id=Vacios align="center" ></div>
+{% endblock %}
+</div>

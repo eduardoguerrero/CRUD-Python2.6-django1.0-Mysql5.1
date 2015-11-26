@@ -1,0 +1,26 @@
+{# Comentario #}
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+    <head>
+        <title>{% block title %}{% endblock %}</title>   
+        {% block javascript %}<script language="Javascript" src="/js/scripts.js"></script>{% endblock %} 
+        {% block ajax %}<script language="Javascript" src="/js/ajax.js"></script>{% endblock %}  
+        {% block css %}<link rel="stylesheet" href="/css/estilo.css"  type="text/css"/>{% endblock %}
+        <meta name="Title" content="Django[Python]"/>
+        <meta name="Author" content="edu_guerr" />
+        <meta name="Subject" content="Django[Python]" />
+        <meta name="Description" content="Aprendiendo Django[Python]" />
+        <meta name="Keywords" content="django,python,programacion" />
+        <meta name="Language" content="Spanish" />
+        <meta name="Revisit" content="15 days" />
+        <meta name="Distribution" content="Local" />
+        <meta name="Robots" content="All" />        
+    </head>
+    <body>	
+	{% block contenido %}	
+	{% block encabezado %}{% endblock%}		
+	{% endblock %}		
+	{% block pie %}	<hr><p>Creando un [CRUD] con [Django]</p>{% endblock %}	
+</body>
+</html>
+
